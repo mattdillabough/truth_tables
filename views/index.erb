@@ -4,6 +4,48 @@
 		<title>Welcome to my truth tables!</title>
 	</head>
 	<body>
+	<% if !@P && !@Q%>	
+	  <form name="form">
+     	<b>P:</b>
+	  	  <select name="P">
+	  	 	<option value="true">true</option>
+			<option value="false">false</option>
+		  </select>
+	  <br>
+    	<b>Q:</b>
+  		  <select name="Q">
+  	 	    <option value="true">true</option>
+		    <option value="false">false</option>
+	    </select>
+	  <br>
+	    <input type="submit" value="Generate Table"/>
+      </form>
+	  
+	<% else @P && @Q%>
+	  <table border="1">
+		  <tr>
+			  <th>p</th>
+			  <th>q</th>
+			  <th>p&&q</th>
+			  <th>p||q</th>
+			  <th>!p&&q</th>
+			  <th>!q</th>
+			  <th>p||!q</th>
+		  </tr>
+		      <td><%= @P %></td>
+		      <td><%= @Q %></td>
+			  <td><%= @P&&@Q %></td>
+			  <td><%= @P||@Q %></td>
+			  <td><%= !@P&&Q %></td>
+			  <td><%= !@Q %></td>
+			  <td><%= @P||!@Q %></td>  
+	  </table>
+	  
+    <a href="http://localhost:4567/index?">Start Over</a>
+	   
+	<% end %>
+	  
+	  
 	</body>
 </html>
 	
