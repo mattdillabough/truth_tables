@@ -1,10 +1,9 @@
 require 'sinatra'
 
-get '/index' do
-    if params[:P] && params[:Q]
-        @P = params[:P]
-        @Q = params[:Q]
-        
-    end
-    erb :index
+get '/' do
+  if params[:p] && params[:q]
+    @p = (params[:p] == "true")
+    @q = (params[:q] == "true")
+  end
+  erb :index
 end
